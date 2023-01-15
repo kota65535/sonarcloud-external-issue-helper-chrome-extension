@@ -1,0 +1,25 @@
+{
+  "name": "SonarCloud Generic Issue Helper",
+  "action": {
+    "default_title": "Settings",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3,
+  "version": "0.0.1",
+  "description": "Add a \"Why is this a issue?\" button for each issue imported by SonarCloud Generic Issue Format",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "content_scripts": [{
+    "matches": ["https://sonarcloud.io/*"],
+    "run_at": "document_end",
+    "all_frames": true,
+    "js": ["main.js"]
+  }],
+  "background": {"service_worker": "background.js"},
+  "icons": {
+    "128": "icon.png"
+  }
+}
