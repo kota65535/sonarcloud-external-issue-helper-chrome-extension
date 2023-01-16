@@ -5,7 +5,7 @@
     "default_popup": "popup.html"
   },
   "manifest_version": 3,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Add the missing \"Why is this an issue?\" tabs for issues imported by SonarCloud Generic Issue Format",
   "permissions": [
     "activeTab",
