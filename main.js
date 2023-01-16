@@ -9,6 +9,11 @@ const onBodyChange = async (mutations, observer) => {
   if (!h1) {
     return;
   }
+  // Do nothing if the why-tab already exists
+  const whyTabLabel = document.querySelector('label[for="rule-tab-viewer__why"]');
+  if (whyTabLabel) {
+    return;
+  }
 
   const settings = await chrome.storage.sync.get('entries');
   settings.entries.forEach(e => {
