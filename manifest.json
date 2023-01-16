@@ -6,7 +6,7 @@
   },
   "manifest_version": 3,
   "version": "0.0.1",
-  "description": "Add a \"Why is this a issue?\" button for each issue imported by SonarCloud Generic Issue Format",
+  "description": "Add the missing \"Why is this an issue?\" tabs for issues imported by SonarCloud Generic Issue Format",
   "permissions": [
     "activeTab",
     "scripting",
