@@ -15,12 +15,18 @@ const onBodyChange = async (mutations, observer) => {
     return;
   }
 
+  // Add a why-tab if any pattern matched.
+  // If more than one patterns matched, the first one wins.
   const settings = await chrome.storage.sync.get('entries');
-  settings.entries.forEach(e => {
+  for (const e of settings.entries) {
     const match = h1.innerText.match(e.pattern);
+    if (!match) {
+      continue
+    }
     const url = e.url.replace(/\${(\w+)}/g, (_, v) => match[v]);
     createWhyTab(url);
-  });
+    break
+  }
 };
 
 const createWhyTab = (url) => {
