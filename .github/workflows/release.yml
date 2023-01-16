@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Released version
+        type: string
+        required: true
+
+
+jobs:
+  show-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show github context object
+        run: echo $JSON
+        env:
+          JSON: ${{ toJSON(github) }}
+  
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Configure git
+        run: |
+          git config --global user.name "Tomohiko Ozawa"
+          git config --global user.email "kota65535@gmail.com"
+      - name: Update version in manifest.json
+        run: |
+          set -x
+          perl -pi -e 's/"version": "(.*)"/"version": "${{ inputs.version }}"/g' manifest.json
+      - name: Create a version commit and tag
+        run: |
+          git add manifest.json
+          git commit -m '${{ inputs.version }}'
+          git tag '${{ inputs.version }}'
+      - name: Push the version commit and tag
+        run: |
+          set -x
+          git pull --rebase
+          git push origin HEAD
+          git push -f --tags
+      - name: Create archive
+        run: |
+          ./archive.sh
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ inputs.version }}
+          files: |
+            archive.zip
