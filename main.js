@@ -45,7 +45,6 @@ const createWhyTab = (url) => {
     window.open(url, '_blank');
   });
 
-  console.log(codeTabLi, whyTabLi);
   codeTabLi.insertAdjacentElement('afterend', whyTabLi);
 };
 
