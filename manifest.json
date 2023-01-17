@@ -1,12 +1,12 @@
 {
-  "name": "SonarCloud Generic Issue Helper",
+  "name": "SonarCloud External Issue Helper",
   "action": {
     "default_title": "Settings",
     "default_popup": "popup.html"
   },
   "manifest_version": 3,
   "version": "0.0.2",
-  "description": "Add the missing \"Why is this an issue?\" tabs for issues imported by SonarCloud Generic Issue Format",
+  "description": "Add missing \"Why is this an issue?\" tabs to SonarCloud for external issues in Generic issue data format.",
   "permissions": [
     "activeTab",
     "scripting",
