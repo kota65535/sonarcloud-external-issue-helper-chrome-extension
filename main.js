@@ -5,7 +5,9 @@ const main = async () => {
 
 const onBodyChange = async (mutations, observer) => {
   // Find the issue title
-  const h1 = mutations.flatMap(m => Array.from(m.addedNodes)).find(n => n.querySelector('div#issues-page h1'));
+  const h1 = mutations.flatMap(m => Array.from(m.addedNodes))
+      .filter(n => n instanceof HTMLElement)
+      .find(n => n.querySelector('div#issues-page h1'));
   if (!h1) {
     return;
   }
