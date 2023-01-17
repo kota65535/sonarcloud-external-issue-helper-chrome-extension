@@ -21,11 +21,11 @@ const onBodyChange = async (mutations, observer) => {
   for (const e of settings.entries) {
     const match = h1.innerText.match(e.pattern);
     if (!match) {
-      continue
+      continue;
     }
     const url = e.url.replace(/\${(\w+)}/g, (_, v) => match[v]);
     createWhyTab(url);
-    break
+    break;
   }
 };
 
