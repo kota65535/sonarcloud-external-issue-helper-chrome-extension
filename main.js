@@ -31,6 +31,7 @@ const onBodyChange = async (mutations, observer) => {
   }
 };
 
+// NOTE: This code may stop working when the SonarCloud website changes
 const createWhyTab = (url) => {
   const codeTabLabel = document.querySelector('label[for="rule-tab-viewer__code"]');
   const codeTabLi = codeTabLabel.parentElement;
