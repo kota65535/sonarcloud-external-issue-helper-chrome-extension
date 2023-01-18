@@ -12,13 +12,21 @@
     "scripting",
     "storage"
   ],
-  "content_scripts": [{
-    "matches": ["https://sonarcloud.io/*"],
-    "run_at": "document_end",
-    "all_frames": true,
-    "js": ["main.js"]
-  }],
-  "background": {"service_worker": "background.js"},
+  "content_scripts": [
+    {
+      "matches": [
+        "https://sonarcloud.io/*"
+      ],
+      "run_at": "document_end",
+      "all_frames": true,
+      "js": [
+        "main.js"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "icons": {
     "128": "icon.png"
   }
