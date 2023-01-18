@@ -8,8 +8,6 @@
   "version": "0.0.2",
   "description": "Add missing \"Why is this an issue?\" tabs to SonarCloud for external issues in Generic issue data format.",
   "permissions": [
-    "activeTab",
-    "scripting",
     "storage"
   ],
   "content_scripts": [
