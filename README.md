@@ -10,6 +10,8 @@ So unlike the regular rule-based issues, "Why is this an issue?" tab (why-issue 
 external issues.
 This extension adds the same tab for external issues as a customizable link.
 
+![](screenshot.png)
+
 ## Settings
 
 The settings window is available from the extension icon.
@@ -24,7 +26,8 @@ A URL to jump to when the added why-issue tab is clicked.
 
 ## Example
 
-Suppose that you have imported external issues by converting the scan result of your SCA tool into the generic issue data
+Suppose that you have imported external issues by converting the scan result of your SCA tool into the generic issue
+data
 format.
 These issue message contain the vulnerable library name and the CVE number like this:
 
